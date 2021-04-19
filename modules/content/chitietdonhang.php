@@ -47,7 +47,7 @@ while($row= mysqli_fetch_array($run)){
         $tongtiens = $row['Tongtien'];
        echo'<tr class="rowcthd">
         	<th>'.$i.'</th>
-            <th><img class="anhdonhang" src="admindt/update/'.$row['hinhanh'].'"></th>
+            <th><img class="anhdonhang" src="https://martialartsplusinc.com/wp-content/uploads/2017/04/default-image.jpg'"></th>
             <th class="col-md-3">'.$row['tensp'].'</th>
             <th>'.chuyendoi($row['dongia']).' VNĐ</th>
             <th>'.$row['soluong'].'</th>

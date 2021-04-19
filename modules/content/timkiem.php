@@ -81,7 +81,7 @@
 							<div class='col-xs-6 col-sm-4 col-md-3 p5 ss'>
 								<div class='boxsp'>
 			                		<div class='imgsp'>
-			                			<a href='index.php?xem=chitietsanpham&id=$row[idSP]'><img class='imgproduct' src='admindt/update/$row[hinhanh]''></a>
+			                			<a href='index.php?xem=chitietsanpham&id=$row[idSP]'><img class='imgproduct' src='https://martialartsplusinc.com/wp-content/uploads/2017/04/default-image.jpg'></a>
 			                			<div class='img-label'>
 			                				<img src='images/hot.png'>
 			                			</div>

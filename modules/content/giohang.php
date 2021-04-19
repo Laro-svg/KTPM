@@ -36,7 +36,7 @@
                     echo '
                     <div class="cart_item">
                       <div class="cart_left">
-                        <div class="cart_img"><img src="admindt/update/'.$_SESSION['cart'][$key]['hinhanh'].'"></div>
+                        <div class="cart_img"><img src="https://martialartsplusinc.com/wp-content/uploads/2017/04/default-image.jpg"></div>
                         <div class="cart_content">
                           <a href="index.php?xem=chitietsanpham&id='.$key.'">'.$_SESSION['cart'][$key]['tensp'].'</a>
                         </div>

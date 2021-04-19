@@ -96,9 +96,9 @@
 					</li>
 					<li><a href="index.php">Trang chủ</a></li>
 					<li><a href="index.php?xem=gioithieu">Giới thiệu</a></li>
-					<li><a href="">Tin tức</a></li>
-					<li><a href="">Tư vấn</a></li>
-					<li><a href="">Liên hệ</a></li>
+					<li><a href="https://www.thegioididong.com/tin-tuc">Tin tức</a></li>
+					<!-- <li><a href="">Tư vấn</a></li> -->
+					<li onClick="window.scrollTo(0,document.body.scrollHeight);" ><a style="cursor: pointer;">Liên hệ</a></li>
 					<li><a href="tel:01649.629.629">HOTLINE: 01649.629.629 (từ 8h-22h cả T7,CN)</a></li>
 				</ul>
 			</div>

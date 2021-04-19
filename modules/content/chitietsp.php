@@ -7,7 +7,7 @@
                     echo '
                         
                         <div class="col-xs-12 col-sm-6 col-md-7 " id="hinhsp">
-                            <img src="admindt/update/'.$row['hinhanh'].'">
+                            <img src="https://martialartsplusinc.com/wp-content/uploads/2017/04/default-image.jpg">
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-5 " id="chitiets">
                             <div class="gia_full">
@@ -54,7 +54,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 " id="thongtinsp">
                     <div class="col-xs-12 col-sm-6 col-md-8">
                         <p>Đặc điểm nổi bật của Samsung Galaxy A9 (2018)</p>
-                        <img src="images/banerct.jpg">
+                        <img src="https://martialartsplusinc.com/wp-content/uploads/2017/04/default-image.jpg">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <p class="title">Thông số kỹ thuật : </p>

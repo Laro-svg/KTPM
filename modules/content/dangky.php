@@ -8,7 +8,7 @@
              <ul class="mnboxl">
                 <li><a href="index.php?xem=dangky&id=1"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
                 <li><a href="index.php?xem=dangnhap&id=1"><i class="fa fa-sign-in"> </i>Đăng nhập</a></li>
-                <li><a href=""><i class="fa fa-key"></i>Quên mật khẩu</a></li>
+                <!-- <li><a href=""><i class="fa fa-key"></i>Quên mật khẩu</a></li> -->
               </ul>
           </div>
         </div>
