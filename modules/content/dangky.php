@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="nut">
-              <button type="submit" name="dangky"  class="btn btn-info" id="signup" >Đăng ký</button>
+              <button type="submit" name="dangky"  class="btn btn-info" id="signup"  onclick="validate()" >Đăng ký</button>
               <button type="reset" class="btn btn-info" id="reset">Nhập lại</button>
             </div>
           </form>
@@ -98,3 +98,14 @@
               //echo "<script>window.location='index.php?xem=dangnhap&id=1'</script>";
               }
          ?>
+         <script>
+              function validate(){
+                let signupBtn=document.getElementById("signup");
+                signupBtn.addEventListener('click',function(){
+                let errorEserNameInput=document.getElementById("loiuser");
+                if(errorEserNameInput){
+                  signupBtn.preventDefault();
+                }
+                })
+              }
+         </script>

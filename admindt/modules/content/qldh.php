@@ -9,10 +9,10 @@
 			</tr>
 			<tr>
 				<th colspan="4">Chọn ngày
-					<input type="date" id="ngaytu" value="2019-05-01" ><span> -> </span><input type="date" id="ngayden" value="2019-05-14" >
+					<input onchange="timkiemngay()" type="date" id="ngaytu" placeholder="dd-mm-yyyy"><span> -> </span><input onchange="timkiemngay()"  type="date" id="ngayden" >
 				</th>
 				<th colspan="1">
-					<button type="button" onclick="timkiemngay()">Tìm kiếm</button>
+					<!-- <button type="button" onchange="timkiemngay()">Tìm kiếm</button> -->
 					<script type="text/javascript">
 						function timkiemngay()
 						{

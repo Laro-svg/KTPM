@@ -23,7 +23,6 @@ $start = ($current_page -1)*$limit;
     <table id="table-sp">
         <thead>
             <tr>
-                <th>Mã SP</th>
                 <th>Hình</th>
                 <th>Tên</th>
                 <th>Giá</th>
@@ -37,13 +36,12 @@ $start = ($current_page -1)*$limit;
         $run = mysqli_query($conn,"SELECT * FROM sanpham,loaisanpham WHERE sanpham.idLSP = loaisanpham.idLSP order by idSP asc Limit $start , $limit");
         while ($row = mysqli_fetch_assoc($run)) {
             echo ' <tr>
-            <td>'.$row['idSP'].'</td>
             <td><img src="update/'.$row['hinhanh'].'" width="110px"></td>
             <td>'.$row['tensp'].'</td>
             <td>'.number_format($row['gia'],0,',','.').' VNĐ</td>
             <td>'.$row['tenloai'].'</td>
             <td>
-            <button id = "'.$row['idSP'].'"class="xoa_sp" onclick ="xacnhanxoa('.$row['idSP'].')">Xoá</button><br>
+            <button id = "'.$row['idSP'].'"class="xoa_sp" onclick ="xacnhanxoa('.$row['idSP'].','.'\''.$row['tensp'].'\''.')">Xoá</button><br>
             <button class="sua_sp" onclick="popup_suasp('.$row['idSP'].')">Sửa</button>
             </td>
             </tr>';
@@ -94,19 +92,19 @@ $start = ($current_page -1)*$limit;
         <div class="popup-themsp__content">
             <div class="popup-themsp__title">Thêm Sản Phẩm</div>
             <div class="popup-themsp-left">
-                <div class="popup-themsp-left__label">Nhập Têns</div>
+                <div class="popup-themsp-left__label">Nhập Tên</div>
                 <div class="popup-themsp-left__label">Nhập Giá</div>
                 <div class="popup-themsp-left__label">Chọn Hình</div>
                 <div class="popup-themsp-left__label">Chọn Loại</div>
-                <div class="popup-themsp-left__label">Mã Loại</div>
                 <div class="popup-themsp-left__label">Mô tả</div>
                 
             </div>
             <div class="popup-themsp-right">
-                <div class="popup-themsp-left__input" ><input type="text" placeholder="Tên sản phẩm" name ="ten"></div>
-                <div class="popup-themsp-left__input"><input type="text" placeholder="Giá sản phẩm" name = "gia"></div>
+                <div class="popup-themsp-left__input" ><input type="text" required placeholder="Tên sản phẩm" name ="ten"></div>
+                <div class="popup-themsp-left__input"><input type="number" required placeholder="Giá sản phẩm" name = "gia"></div>
                 <div class="popup-themsp-left__input" ><input type="file" name="hinhanh" id="file" onchange="return fileValidationt()"></div>
-                <div class="popup-themsp-left__input" ><select name="dropdown" onchange="chon(this)">
+                <div class="popup-themsp-left__input" ><select name="dropdown" required onchange="chon(this)">
+                <option selected="selected" ></option>
                     <?php
                     $sql = "SELECT * FROM loaisanpham order by idLSP asc";
                     $run = mysqli_query($conn,$sql);
@@ -191,9 +189,9 @@ $start = ($current_page -1)*$limit;
                 }
             }
         }
-        function xacnhanxoa(idsp)
+        function xacnhanxoa(idsp,tensp)
         {
-            var answer = confirm("Xác nhận xóa sản phẩm" + idsp +"???" )
+            var answer = confirm("Xác nhận xóa sản phẩm " + tensp +" ?" )
             if (answer) {
                 $.ajax({
                     url : 'modules/content/xoasp.php',
@@ -248,19 +246,17 @@ $start = ($current_page -1)*$limit;
         <div class="popup-suasp__content">
             <div class="popup-themsp__title">Sửa Sản Phẩm</div>
             <div class="popup-themsp-left">
-                <div class="popup-themsp-left__label">Mã SP</div>
                 <div class="popup-themsp-left__label">Nhập Tên</div>
                 <div class="popup-themsp-left__label">Nhập Giá</div>
                 <div class="popup-themsp-left__label">Chọn Hình</div>
                 <div class="popup-themsp-left__label">Chọn Loại</div>
-                <div class="popup-themsp-left__label">Mã Loại</div>
                 <div class="popup-themsp-left__label">Mô tả</div>
                 
             </div>
             <div class="popup-themsp-right">
-                <div class="popup-themsp-left__input" ><input type="text" placeholder="Mã loại" name ="idsps" id="idsp" readonly></div>
-                <div class="popup-themsp-left__input" ><input type="text" placeholder="Tên sản phẩm" name ="tens" id="tensp"></div>
-                <div class="popup-themsp-left__input"><input type="text" placeholder="Giá sản phẩm" name = "gias" id="giasp"></div>
+                <input type="text" hidden placeholder="Mã loại" name ="idsps" id="idsp">
+                <div class="popup-themsp-left__input" ><input type="text" placeholder="Tên sản phẩm" required name ="tens" id="tensp"></div>
+                <div class="popup-themsp-left__input"><input type="number" placeholder="Giá sản phẩm" name = "gias" required  id="giasp"></div>
                 <div class="popup-themsp-left__input" id = "hinhanhs"><input type="file" name="hinhanhs" id="files" onchange="return fileValidations()"></div>
                 <div class="popup-themsp-left__input" >
                     <select name="dropdowns" onchange="chons(this)" id="loaisp">
@@ -282,7 +278,8 @@ $start = ($current_page -1)*$limit;
 
                     </select>
                 </div>
-                <div class="popup-themsp-left__input" id="loais" ></div>
+                <!-- <div class="popup-themsp-left__input" id="loais" ></div> -->
+                <input type="number" hidden id="loais">
                 <div class="popup-themsp-left__input"><textarea name="motas" rows="5" cols="20" placeholder="Mô tả tại đây..." id="mota"></textarea></div>
 
             </div>

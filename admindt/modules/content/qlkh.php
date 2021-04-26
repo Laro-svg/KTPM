@@ -10,7 +10,6 @@
                             <th>Địa Chỉ</th>
                             <th>SĐT</th>
                             <th>Email</th>
-                            <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,9 +28,6 @@
                                                 <td>'.$row['Diachi'].'</td>
                                                 <td>'.$row['SDT'].'</td>
                                                 <td>'.$row['Gmail'].'</td>
-                                                <td>
-                                                    <button class="xoa_sp">Xóa</button><br>
-                                                </td>
                                             </tr>';
                                     }
                                     $i++;
